@@ -10,8 +10,7 @@ describe 'Parking Boy' do
     it 'should park the car to parking lot success when it is not full' do
       subject.park(Car.new)
 
-      first_parking_lot = subject.instance_variable_get('@parking_lots').last
-      expect(first_parking_lot.available_space).to be 1
+      expect(parking_lot1.available_space).to be 1
       expect(subject.park(Car.new)).to be_an_instance_of(Ticket)
     end
 
